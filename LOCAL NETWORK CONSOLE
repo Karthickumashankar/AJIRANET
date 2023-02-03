@@ -1,0 +1,44 @@
+import java.util.*;
+public class AjiraNet {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("--------------AjiraNet---------------");
+		String Device_Type1="COMPUTER";
+		String Device_Type2="REPEATER";
+		//System.out.println("ADD <Device_Type> <Device_Lists>");
+		ArrayList<String>COMPUTERS=new ArrayList<>();
+		ArrayList<String>REPEATERS=new ArrayList<>();
+		ArrayList<String>COMPLETE=new ArrayList<>();
+		int target=1;
+		int count=0;
+		while(count<target) {
+		String str=sc.nextLine();
+		String arr[]=str.split(" ");
+		if(arr.length==3) {
+		if(arr[1].contains(Device_Type1) || arr[1].contains(Device_Type2)  ) {
+				System.out.println("Successfully added "+arr[2]+".");
+			if(Device_Type1==arr[1]) {
+				COMPUTERS.add(arr[2]);
+				COMPLETE.add(arr[2]);
+				System.out.println(COMPUTERS.get(0));
+			}
+			if(Device_Type2==arr[1]) {
+				REPEATERS.add(arr[2]);
+				COMPLETE.add(arr[2]);
+			}
+				
+			}
+		else {
+			System.out.print("Error:Invalid Command Syntax.");
+		}
+		}
+		else {
+			System.out.print("Error:Invalid Command Syntax.");
+		}
+		count++;
+		target+=count;
+		}
+		
+	}
+
+}
